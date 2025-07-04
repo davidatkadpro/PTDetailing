@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PTDetailing – Project Settings" Height="Auto" Width="480"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Background="#FFF">
+
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Padding" Value="4,2"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="24"/>
+        </Style>
+        <Style TargetType="GroupBox">
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="MinWidth" Value="90"/>
+            <Setter Property="Height" Value="28"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+
+            <GroupBox Header="Family Files">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Tendon Family" Grid.Row="0" Grid.Column="0" Margin="0,0,8,8"/>
+                    <TextBox Name="TendonFamilyTb" Grid.Row="0" Grid.Column="1" Margin="0,0,0,8"/>
+                    <TextBlock Text="Leader Family" Grid.Row="1" Grid.Column="0" Margin="0,0,8,8"/>
+                    <TextBox Name="LeaderFamilyTb" Grid.Row="1" Grid.Column="1" Margin="0,0,0,8"/>
+                    <TextBlock Text="Drape Family" Grid.Row="2" Grid.Column="0" Margin="0,0,8,8"/>
+                    <TextBox Name="DrapeFamilyTb" Grid.Row="2" Grid.Column="1" Margin="0,0,0,8"/>
+                    <TextBlock Text="Tag Family" Grid.Row="3" Grid.Column="0" Margin="0,0,8,0"/>
+                    <TextBox Name="TagFamilyTb" Grid.Row="3" Grid.Column="1" Margin="0,0,0,0"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Import &amp; Tagging Options">
+                <StackPanel>
+                    <CheckBox Name="GroupTendonsCb" Content="Group similar tendons on import" Margin="0,0,0,8"/>
+                    <CheckBox Name="CreateDetailGroupCb" Content="Create detail group on import" Margin="0,0,0,8"/>
+                    <CheckBox Name="DrapeTagsCb" Content="Tag drapes on import" Margin="0,0,0,8"/>
+                    <CheckBox Name="DrapeEndTagsCb" Content="Tag drape ends by default" Margin="0,0,0,8"/>
+                    <CheckBox Name="TagStrandsCb" Content="Tag tendon strands" Margin="0,0,0,0"/>
+                </StackPanel>
+            </GroupBox>
+            
+            <GroupBox Header="Grouping &amp; Snapping Tolerances">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="80"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Text="Angle Tolerance (deg)" Grid.Row="0" Grid.Column="0" Margin="18,0,8,8"/>
+                    <TextBox Name="AngleTolTb" Grid.Row="0" Grid.Column="1" Margin="0,0,0,8"/>
+
+                    <TextBlock Text="Length Tolerance (mm)" Grid.Row="1" Grid.Column="0" Margin="18,0,8,8"/>
+                    <TextBox Name="LengthTolTb" Grid.Row="1" Grid.Column="1" Margin="0,0,0,8"/>
+                    
+                    <TextBlock Text="Spacing Tolerance (mm)" Grid.Row="2" Grid.Column="0" Margin="18,0,8,8"/>
+                    <TextBox Name="SpacingTolTb" Grid.Row="2" Grid.Column="1" Margin="0,0,0,8"/>
+                    
+                    <TextBlock Text="Shift Tolerance (mm)" Grid.Row="3" Grid.Column="0" Margin="18,0,8,8"/>
+                    <TextBox Name="ShiftTolTb" Grid.Row="3" Grid.Column="1" Margin="0,0,0,8"/>
+                    
+                    <TextBlock Text="Drape Dist. Tolerance (mm)" Grid.Row="4" Grid.Column="0" Margin="18,0,8,8"/>
+                    <TextBox Name="DrapeDistTolTb" Grid.Row="4" Grid.Column="1" Margin="0,0,0,8"/>
+                    
+                    <TextBlock Text="Drape Height Tolerance (mm)" Grid.Row="5" Grid.Column="0" Margin="18,0,8,8"/>
+                    <TextBox Name="DrapeHeightTolTb" Grid.Row="5" Grid.Column="1" Margin="0,0,0,8"/>
+
+                    <TextBlock Text="Pan Stress End Offset (mm)" Grid.Row="6" Grid.Column="0" Margin="18,0,8,8"/>
+                    <TextBox Name="PanStressOffsetTb" Grid.Row="6" Grid.Column="1" Margin="0,0,0,8"/>
+
+                    <CheckBox Name="SnapEndsCb" Content="Auto-snap ends to slab edge" Grid.Row="7" Grid.Column="0" Margin="0,8,8,0"/>
+                    <TextBox Name="SnapTolTb" Grid.Row="7" Grid.Column="1" Margin="0,8,0,0"/>
+
+                </Grid>
+            </GroupBox>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Name="OkBtn" Content="OK" IsDefault="True" Margin="0,0,8,0"/>
+            <Button Name="CancelBtn" Content="Cancel" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window> 
